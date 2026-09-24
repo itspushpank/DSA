@@ -1,0 +1,5 @@
+wap a program to perform following operation in an array of size 10
+1. insertion
+2. deletion 
+3. treversal 
+use three saprate function to perform these operation.
