@@ -30,13 +30,6 @@ int pop() {
     return stack[top--];
 }
 
-int peek() {
-    if (isEmpty()) {
-        printf("Stack is empty\n");
-        return -1;
-    }
-    return stack[top];
-}
 
 void display() {
     if (isEmpty()) {
@@ -59,7 +52,6 @@ int main() {
     printf("Popped: %d\n", pop());
     display();
     
-    printf("Top element: %d\n", peek());
     
     push(40);
     push(50);
