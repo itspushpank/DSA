@@ -27,24 +27,14 @@ void push(char value)
     // printf("Pushed %c onto stack\n", value);
 }
 
-int pop()
+char pop()
 {
     if (isEmpty())
     {
         printf("Stack Underflow: Cannot pop from empty stack\n");
-        return -1;
+        return '\0';
     }
     return stack[top--];
-}
-
-int peek()
-{
-    if (isEmpty())
-    {
-        printf("Stack is empty\n");
-        return -1;
-    }
-    return stack[top];
 }
 
 void display()
