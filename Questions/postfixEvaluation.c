@@ -74,18 +74,21 @@ fgets(exp, SIZE, stdin);
             if (exp[i] == '-'){
                 int b = pop();
                 int a = pop();
+                if(a == INT_MIN || b== INT_MIN)break;
                 push(a - b);
             }
             // assci value of '*' = 42
             if (exp[i] == '*'){
                 int b = pop();
                 int a = pop();
+                if(a == INT_MIN || b== INT_MIN)break;
                 push(a * b);
             }
             // assci value of '/' = 47
             if (exp[i] == '/'){
                 int b = pop();
                 int a = pop();
+                if(a == INT_MIN || b== INT_MIN)break;
                 push(a / b);
             }
         }
