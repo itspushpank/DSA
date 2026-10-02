@@ -5,6 +5,10 @@
 int stack[MAX_SIZE];
 int top = -1;
 
+void initStack() {
+    top = -1;
+}
+
 int isEmpty() {
     return top == -1;
 }
@@ -15,36 +19,35 @@ int isFull() {
 
 void push(int value) {
     if (isFull()) {
-        printf("Stack Overflow: Cannot push %d\n", value);
+        printf("Stack Overflow\n");
         return;
     }
     stack[++top] = value;
-    printf("Pushed %d onto stack\n", value);
+    printf("Pushed: %d\n", value);
 }
 
 int pop() {
     if (isEmpty()) {
-        printf("Stack Underflow: Cannot pop from empty stack\n");
+        printf("Stack Underflow\n");
         return -1;
     }
     return stack[top--];
 }
 
-int peek(){
+int peek() {
     if (isEmpty()) {
-        printf("Stack Underflow\n");
+        printf("Stack Empty\n");
         return -1;
     }
     return stack[top];
-    
 }
 
 void display() {
     if (isEmpty()) {
-        printf("Stack is empty\n");
+        printf("Stack Empty\n");
         return;
     }
-    printf("Stack (top to bottom): ");
+    printf("Stack: ");
     for (int i = top; i >= 0; i--) {
         printf("%d ", stack[i]);
     }
@@ -52,18 +55,13 @@ void display() {
 }
 
 int main() {
+    initStack();
     push(10);
     push(20);
     push(30);
     display();
-    
+    printf("Top: %d\n", peek());
     printf("Popped: %d\n", pop());
     display();
-    
-    
-    push(40);
-    push(50);
-    display();
-    
     return 0;
 }
