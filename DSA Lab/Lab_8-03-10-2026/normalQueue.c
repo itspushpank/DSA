@@ -67,7 +67,7 @@ void display(Nqueue* q){
     printf("display :-\n");
     for (int i = q -> front; i <= q -> rear; i++)
     {
-        printf("%d ",i);
+        printf("%d ",q -> Queue[i]);
     }
     
 }
@@ -78,6 +78,17 @@ int main(){
 
     Nqueue* q = createQueue();
 
+    enQueue(q,10);
+    enQueue(q,20);
+    enQueue(q,30);
+    enQueue(q,40);
+    enQueue(q,50);
+    display(q);
+
+    dequeue(q);
+    dequeue(q);
+    dequeue(q);
+    display(q);
 
 
 
