@@ -54,7 +54,7 @@ int dequeue(Nqueue* q){
         return temp;
     }
 
-    return q -> Queue[++q -> front];
+    return q -> Queue[(q -> front)++];
 
 
 }
@@ -85,9 +85,13 @@ int main(){
     enQueue(q,50);
     display(q);
 
-    dequeue(q);
-    dequeue(q);
-    dequeue(q);
+    printf("\n");
+    
+    printf("%d ",dequeue(q));
+    printf("%d ",dequeue(q));
+    printf("%d ",dequeue(q));
+    printf("\n");
+
     display(q);
 
 
